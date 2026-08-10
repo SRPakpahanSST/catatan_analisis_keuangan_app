@@ -1,0 +1,45 @@
+import os
+import json
+import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+def parse_keuangan_dari_teks(teks):
+    prompt = f"""
+    Anda adalah asisten keuangan untuk UMKM. Ekstrak informasi dari teks berikut:
+    "{teks}"
+    Kembalikan dalam format JSON murni tanpa markdown, tanpa kata pengantar:
+    {{
+      "jenis": "pemasukan" atau "pengeluaran",
+      "jumlah": (angka desimal),
+      "kategori": "makanan/transport/operasional/penjualan/lainnya",
+      "deskripsi": "deskripsi singkat maksimal 10 kata"
+    }}
+    """
+    try:
+        response = model.generate_content(prompt)
+        raw = response.text.replace("```json", "").replace("```", "").strip()
+        return json.loads(raw)
+    except Exception as e:
+        return {"error": f"Gagal parse: {str(e)}", "raw": response.text if 'response' in locals() else ""}
+
+def rekomendasi_hemat(transaksi_list):
+    if not transaksi_list:
+        return "Belum ada data transaksi. Mulai catat keuangan Anda untuk mendapat rekomendasi!"
+    
+    prompt = f"""
+    Berdasarkan data keuangan UMKM berikut (20 transaksi terakhir):
+    {json.dumps(transaksi_list[:20], indent=2, default=str)}
+    
+    Berikan 3 saran praktis dan spesifik untuk menghemat pengeluaran dan meningkatkan efisiensi keuangan.
+    Jawab dalam bahasa Indonesia yang santun, langsung ke poin, dan berikan contoh konkret.
+    """
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return f"Gagal mendapatkan rekomendasi: {str(e)}"
