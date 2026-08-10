@@ -1,6 +1,6 @@
-# ubelasy/dashboard_keuangan_real.py
+# dashboard_keuangan_real.py
 """
-Fitur Dashboard Keuangan Real untuk Ubelasy.
+Fitur Dashboard Keuangan Real.
 Menampilkan visualisasi interaktif kesehatan keuangan berdasarkan data dari Perencanaan Keuangan Real.
 """
 
