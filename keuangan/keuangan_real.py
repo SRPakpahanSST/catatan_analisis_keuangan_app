@@ -1,6 +1,6 @@
-# ubelasy/keuangan_real.py
+# keuangan_real.py
 """
-Fitur Perencanaan Keuangan Real - Ubelasy.
+Fitur Perencanaan Keuangan Real -
 Membantu pengguna mengelola keuangan, menghitung rasio utang, dan mensimulasikan kemampuan pinjaman.
 """
 
