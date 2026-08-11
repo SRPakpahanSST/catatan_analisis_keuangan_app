@@ -5,6 +5,27 @@ from keuangan import dahboard_keuangan_real as dkr
 from chatbot_app import parse_keuangan_dari_teks, rekomendasi_hemat
 import os
 
+from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
+from keuangan import keuangan_real as kr
+from keuangan import dahboard_keuangan_real as dkr
+from chatbot_app import parse_keuangan_dari_teks, rekomendasi_hemat
+import os
+
+# Perhatikan: instance harus bernama 'app'
+app = Flask(__name__, static_folder="catatan/dist", static_url_path="/")
+CORS(app)
+
+# ... (semua route API sama seperti sebelumnya) ...
+
+# Penting untuk Vercel: Jangan jalankan app.run() jika dideploy
+# Vercel akan menggunakan instance 'app' secara langsung
+
+# Hanya untuk local development
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
+
 app = Flask(__name__, static_folder="catatan/dist", static_url_path="/")
 CORS(app)
 
