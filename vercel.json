@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxDuration": 10
+      }
+    },
+    {
+      "src": "catatan/**",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "catatan/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "catatan/dist/index.html"
+    }
+  ]
+}
