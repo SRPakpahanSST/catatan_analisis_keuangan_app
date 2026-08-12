@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "outputDirectory": "catatan/dist", // <-- Tambahkan baris ini
   "builds": [
     {
       "src": "main.py",
