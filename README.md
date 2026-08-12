@@ -12,6 +12,8 @@
 
 Aplikasi ini adalah solusi inovatif berbasis **Artificial Intelligence** untuk membantu UMKM mengelola keuangan dengan mudah. Cukup ketik seperti mengobrol, AI akan mencatat transaksi, menyajikan dashboard analitik, memprediksi arus kas, dan memberi rekomendasi penghematan.
 
+Alamat URL link aplikasi: https://catatan-analisis-keuangan-app-5j81.vercel.app/
+
 ---
 
 ## ✨ Fitur Unggulan
