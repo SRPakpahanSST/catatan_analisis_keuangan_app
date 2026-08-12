@@ -45,3 +45,81 @@ Aplikasi ini adalah solusi inovatif berbasis **Artificial Intelligence** untuk m
 ---
 
 ## 📁 Struktur Proyek
+
+catatan_analisis_keuangan_app/
+├── main.py                     # Server Flask utama
+├── chatbot-app.py              # Integrasi AI Gemini
+├── requirements.txt            # Dependensi Python
+├── .env                        # API Key (jangan di-commit)
+├── .gitignore                  # File yang diabaikan Git
+├── README.md                   # Dokumentasi
+├── data.json                   # Database transaksi (auto-generated)
+│
+├── keuangan/                   # Backend
+│   ├── init.py
+│   ├── keuangan_real.py        # CRUD transaksi
+│   └── dahboard_keuangan_real.py # Analisis & prediksi
+│
+└── catatan/                    # Frontend React
+├── src/
+│   ├── components/         # Komponen React
+│   ├── utils/api.js        # Koneksi ke backend
+│   └── styles/             # CSS
+├── public/
+├── package.json
+└── vite.config.js
+
+```
+
+---
+
+## 🚀 Instalasi & Menjalankan Aplikasi
+
+### 1. Prasyarat
+- Python 3.9+
+- Node.js 18+
+- API Key dari [Google AI Studio](https://aistudio.google.com/)
+
+### 2. Setup Backend
+```bash
+# Buat virtual environment (opsional)
+python -m venv venv
+source venv/bin/activate  # Mac/Linux
+# venv\Scripts\activate   # Windows
+
+# Install dependensi
+pip install -r requirements.txt
+
+# Buat file .env dan isi API Key
+echo "GEMINI_API_KEY=your_api_key_here" > .env
+```
+
+3. Setup Frontend
+
+```bash
+cd catatan
+npm install
+npm run build
+cd ..
+```
+
+4. Jalankan Aplikasi
+
+```bash
+python main.py
+```
+
+Buka browser di http://localhost:5000
+
+---
+
+📡 API Endpoint
+
+Endpoint Method Deskripsi
+/api/transactions GET Ambil semua transaksi
+/api/transactions POST Tambah transaksi (manual atau via AI)
+/api/transactions/<id> DELETE Hapus transaksi
+/api/dashboard GET Ringkasan, kategori, prediksi
+/api/rekomendasi GET Saran penghematan dari AI
+
+---
