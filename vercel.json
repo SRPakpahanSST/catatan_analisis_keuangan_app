@@ -3,13 +3,10 @@
   "builds": [
     {
       "src": "main.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxDuration": 10
-      }
+      "use": "@vercel/python"
     },
     {
-      "src": "catatan/**",
+      "src": "catatan/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "catatan/dist"
