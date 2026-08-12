@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "outputDirectory": "catatan/dist", // <-- Tambahkan baris ini
+  "outputDirectory": "catatan/dist",
   "builds": [
     {
       "src": "main.py",
@@ -8,10 +8,7 @@
     },
     {
       "src": "catatan/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "catatan/dist"
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
