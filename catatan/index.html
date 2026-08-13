@@ -1,13 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>PMD Impact Invest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #0a1a2e 0%, #1b3a5c 100%);
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-radius: 40px;
+            padding: 48px 36px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fbbf24;
+            color: #0a1a2e;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 6px 18px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px 40px;
+            margin: 32px 0;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .api-section {
+            margin-top: 28px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .api-endpoint {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px 20px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: #e5e7eb;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .api-endpoint code {
+            background: #1e293b;
+            padding: 4px 14px;
+            border-radius: 40px;
+            color: #fbbf24;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 14px 48px;
+            background: #fbbf24;
+            color: #0a1a2e;
+            font-weight: 700;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #fcd34d;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(251, 191, 36, 0.3);
+        }
+
+        .footer {
+            margin-top: 28px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 32px 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .stats {
+                gap: 16px 24px;
+            }
+            .stat-number {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<div id="root"></div>
-<script type="module" src="/src/index.jsx"></script>
+
+    <div class="card">
+        <!-- BADGE -->
+        <div class="badge">🚀 PMD Impact Invest</div>
+
+        <!-- JUDUL -->
+        <h1>
+            Cuan Berkah, <br /><span>Dampak Nyata</span>
+        </h1>
+
+        <p class="subtitle">
+            Komunitas investor pemula yang rutin investasi dan sisihkan 2% profit untuk donasi sosial.
+            <br />
+            <span style="color: rgba(255,255,255,0.5); font-size: 0.95rem;">
+                #BelajarSambilBerbagi
+            </span>
+        </p>
+
+        <!-- STATISTIK -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">Rp 379.143</span>
+                <span class="stat-label">Total Aset</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2%</span>
+                <span class="stat-label">Profit Sharing</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">🌱</span>
+                <span class="stat-label">Berkah Investasi</span>
+            </div>
+        </div>
+
+        <!-- API STATUS -->
+        <div class="api-section">
+            <div class="api-endpoint">
+                ⚡ Backend API
+                <code>/api/</code>
+                <span style="color: #4ade80; font-size: 0.7rem; margin-left: 4px;">● online</span>
+            </div>
+        </div>
+
+        <!-- TOMBOL -->
+        <a href="#" class="btn" onclick="alert('Halo dari PMD Impact Invest! Mari tumbuh bersama.')">
+            Gabung Komunitas
+        </a>
+
+        <div class="footer">
+            © 2026 PMD Impact Invest — Dibangun dengan 🖤 untuk masa depan
+        </div>
+    </div>
+
 </body>
 </html>
