@@ -1,24 +1,26 @@
 {
   "version": 2,
-  "outputDirectory": "catatan/dist",
   "builds": [
     {
       "src": "main.py",
       "use": "@vercel/python"
     },
     {
-      "src": "catatan/package.json",
-      "use": "@vercel/static-build"
+      "src": "catatan/**",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "main.py"
+      "dest": "/main.py"
     },
     {
       "src": "/(.*)",
-      "dest": "catatan/dist/index.html"
+      "dest": "/catatan/dist/index.html"
     }
   ]
 }
