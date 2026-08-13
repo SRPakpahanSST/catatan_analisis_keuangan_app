@@ -23,24 +23,4 @@
       "dest": "/catatan/dist/index.html"
     }
   ]
-
-}{
-  "version": 2,
-  "outputDirectory": "catatan/dist",
-  "builds": [
-    {
-      "src": "main.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/main.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
 }
